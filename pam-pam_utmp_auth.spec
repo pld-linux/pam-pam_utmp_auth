@@ -1,4 +1,4 @@
-%define 	modulename pam_wtmp
+%define 	modulename pam_utmp_auth
 Summary:	PAM module for login without password for logged users
 Summary(pl):	Modu³ PAM pozwalaj±cy na logowanie siê bez has³a
 Name:		pam-%{modulename}
