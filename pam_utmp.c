@@ -25,7 +25,7 @@
 #include <ctype.h>
 
 #define PAM_SM_AUTH
-#define PAM_MODULE_NAME "pam_utmp"
+#define PAM_MODULE_NAME "pam_wtmp"
 
 #include <security/pam_modules.h>
 #include <security/pam_misc.h>
@@ -59,7 +59,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, co
 		return PAM_AUTHTOK_ERR;
 
 	while ((ut = getutent())) {
-		if (ut->ut_type == USER_PROCESS && !strcmp(ut->ut_user, user) && !strncmp(ut->ut_line, "tty", 3) && isdigit(ut->ut_line[3]))
+		if (ut->ut_type == USER_PROCESS && !strcmp(ut->ut_user, user) && ( !strncmp(ut->ut_line, "tty", 3) || !strncmp(ut->ut_line,"vc", 2) ) && isdigit(ut->ut_line[3]))
 			return PAM_SUCCESS;
 	}
     
