@@ -4,6 +4,7 @@ Summary(pl):	Modu³ PAM pozwalaj±cy na logowanie siê bez has³a
 Name:		pam-%{modulename}
 Version:	1.0
 Release:	1
+Epoch:		1
 License:	GPL v2
 Group:		Base
 Vendor:		wojtek kaniewski <wojtekka@irc.pl>
