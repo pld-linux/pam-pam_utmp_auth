@@ -7,15 +7,15 @@ Release:	1
 Epoch:		1
 License:	GPL v2
 Group:		Base
-Vendor:		wojtek kaniewski <wojtekka@irc.pl>
+Vendor:		Wojtek Kaniewski <wojtekka@irc.pl>
 Source0:	pam_utmp.c
 # based on ftp://dev.null.pl/pub/pam_utmp.c with small changes, don't put into
 # df - it's only small text file.
 URL:		http://dev.null.pl/
 BuildRequires:	pam-devel
 Provides:	%{modulename}
+Obsoletes:	pam_utmp_auth
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	%{modulename}
 
 %description
 PAM module which allow login without password for currently logged
