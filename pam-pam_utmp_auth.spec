@@ -32,7 +32,7 @@ cp -f %{SOURCE0} .
 %build
 %{__cc} %{rpmcflags} -fPIC -c pam_utmp.c
 ld -shared -x -o %{modulename}.so pam_utmp.o -lpam
-head -19 pam_utmp.c >README
+head -n 19 pam_utmp.c >README
 
 %install
 rm -rf $RPM_BUILD_ROOT
