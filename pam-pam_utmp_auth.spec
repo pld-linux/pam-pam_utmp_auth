@@ -10,7 +10,7 @@ Vendor:		wojtek kaniewski <wojtekka@irc.pl>
 Source0:	pam_utmp.c
 # based on ftp://dev.null.pl/pub/pam_utmp.c with small changes, don't put into
 # df - it's only small text file.
-URL:		http://dev.null.pl
+URL:		http://dev.null.pl/
 BuildRequires:	pam-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Provides:	%{modulename}
@@ -35,9 +35,7 @@ head -19 pam_utmp.c >README
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/lib/security
-
-install %{modulename}.so $RPM_BUILD_ROOT/lib/security
+install -D %{modulename}.so $RPM_BUILD_ROOT/lib/security/%{modulename}.so
 
 %clean
 rm -rf $RPM_BUILD_ROOT
