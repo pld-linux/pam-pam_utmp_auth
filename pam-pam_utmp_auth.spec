@@ -12,8 +12,8 @@ Source0:	pam_utmp.c
 # df - it's only small text file.
 URL:		http://dev.null.pl/
 BuildRequires:	pam-devel
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Provides:	%{modulename}
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	%{modulename}
 
 %description
@@ -42,5 +42,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) /lib/security/%{modulename}.so
 %doc	README
+%attr(755,root,root) /lib/security/%{modulename}.so
