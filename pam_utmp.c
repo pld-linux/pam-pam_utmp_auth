@@ -7,12 +7,15 @@
  * dlatego nie gwarantujê niczego.
  *
  * kompilacja:
- *     gcc pam_utmp.c -o pam_utmp.so -shared
- *     cp pam_utmp.so /lib/security
+ *     gcc pam_utmp.c -o pam_utmp_auth.so -shared
+ *     cp pam_utmp_auth.so /lib/security
  *
  * instalacja:
  *    dopisaæ na pocz±tku /etc/pam.d/login liniê:
- *    "auth    sufficient     /lib/security/pam_utmp.so"
+ *    "auth    sufficient     /lib/security/pam_utmp_auth.so"
+ *
+ *    Oryginalny program z http://dev.null.pl/
+ *    Dostosowanie do pld i vc undefine@pld-linux.org
  */
 
 #include <stdio.h>
@@ -25,7 +28,7 @@
 #include <ctype.h>
 
 #define PAM_SM_AUTH
-#define PAM_MODULE_NAME "pam_wtmp"
+#define PAM_MODULE_NAME "pam_utmp_auth"
 
 #include <security/pam_modules.h>
 #include <security/pam_misc.h>
