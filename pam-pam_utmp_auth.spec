@@ -1,6 +1,6 @@
 %define 	modulename pam_utmp_auth
 Summary:	PAM module for login without password for logged users
-Summary(pl.UTF-8):   Moduł PAM pozwalający na logowanie się bez hasła
+Summary(pl.UTF-8):	Moduł PAM pozwalający na logowanie się bez hasła
 Name:		pam-%{modulename}
 Version:	1.0
 Release:	2
